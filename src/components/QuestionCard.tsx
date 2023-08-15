@@ -2,7 +2,7 @@ import React from 'react'
 //types
 import { AnswerObject } from '../App';
 //styles
-// import {Wrapper, ButtonWrapper} from './QuestionCard.sty'
+import './QuestionCard.css'
 type props = {
     question : string;
     answers : string[];
