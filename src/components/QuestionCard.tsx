@@ -1,6 +1,6 @@
 import React from 'react'
 //types
-import { AnswerObject } from '../App';
+import { AnswerObject } from '../pages/quizApp';
 //styles
 import './QuestionCard.css'
 type props = {
