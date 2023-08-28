@@ -9,7 +9,10 @@ const root = document.getElementById('root') as HTMLElement;
 ReactDOM.render(
   <React.StrictMode>
     <App />
+<<<<<<< Updated upstream
     <ToastContainer />
+=======
+>>>>>>> Stashed changes
   </React.StrictMode>,
   root
 );
