@@ -5,7 +5,7 @@ import { QuestionState, Difficulty } from '../Api';
 import '../App.css';
 import Login from './login';
 import { useNavigate } from 'react-router-dom';
-// import SubmitPage from './submissionPage';
+
 
 export type AnswerObject = {
   question: string;
@@ -117,13 +117,6 @@ const QuizApp = () => {
     navigate('/login');
   };
 
-  // const submit = () => {
-  //   setQuizOver(true);
-  //   setShowScore(true);
-  //   setUserAnswers([]);
-  //   setNumber(0);
-  //   navigate('/SubmitPage')
-  // }
 
   console.log(questions)
   return (
@@ -151,14 +144,6 @@ const QuizApp = () => {
           next Question
         </button>
       ) : null}
-      {/* {showSubmitPage && (
-        <SubmitPage
-          showScore={userAnswers.filter(answer => answer.correct).length}
-        />
-      )} */}
-      {/* <button className="submit" onClick={submit}>
-        submit
-      </button> */}
       <button className="logout" onClick={logout}>
         logout
       </button>
