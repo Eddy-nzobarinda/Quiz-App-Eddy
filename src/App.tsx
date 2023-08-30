@@ -7,7 +7,6 @@ import Login from './pages/login';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignUp from './pages/signup';
 import './pages/login.css'
-// import SubmitPage from './pages/submissionPage';
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
           <Route path='/instructionPage' element={<Instructions />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
-          {/* <Route path='/submissionPage' element={<SubmitPage />} /> */}
         </Routes>
       </Router>
     </>
