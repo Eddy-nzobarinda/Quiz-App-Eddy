@@ -5,6 +5,7 @@ import { QuestionState, Difficulty } from '../Api';
 import '../App.css';
 import Login from './login';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export type AnswerObject = {
@@ -41,29 +42,6 @@ const QuizApp = () => {
       localStorage.setItem('quizAppState', JSON.stringify(dataToSave));
     }
   }, [number, userAnswers, quizOver, showScore]);
-
-
-  useEffect(() => {
-    const loadSavedState = async () => {
-      const savedData = localStorage.getItem('quizAppState');
-      if (savedData) {
-        const parsedData = JSON.parse(savedData);
-
-        setNumber(parsedData.number);
-        setUserAnswers(parsedData.userAnswers);
-        setQuizOver(parsedData.quizOver);
-        setShowScore(parsedData.showScore);
-
-        const newQuestions = await fetchQuizQuestions(
-          TOTAL_QUESTIONS,
-          Difficulty.EASY,
-        );
-        setQuestions(newQuestions);
-      }
-    };
-
-    loadSavedState();
-  }, []);
 
   const startQuiz = async () => {
     setLoading(true);
@@ -118,13 +96,13 @@ const QuizApp = () => {
   };
 
 
-  console.log(questions)
+  // console.log(questions)
   return (
     <div className="App">
       <h1>Quiz-App</h1>
       {quizOver || userAnswers.length === TOTAL_QUESTIONS ? (
         <button className="start" onClick={startQuiz}>
-          restart
+          Start
         </button>
       ) : null}
       {!quizOver && !showScore ? <p className='score'>score:{userAnswers.filter(answer => answer.correct).length}</p> : null}
@@ -144,6 +122,9 @@ const QuizApp = () => {
           next Question
         </button>
       ) : null}
+      <Link to="/correctanswer" className="correct-button">
+        view answers
+      </Link>
       <button className="logout" onClick={logout}>
         logout
       </button>
