@@ -19,7 +19,7 @@ const Login: React.FC = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:5500/auth/login",
+                "https://important-lion-earrings.cyclic.app/auth/login",
                 data,
                 {
                     headers: {
