@@ -20,7 +20,7 @@ const SignUp: React.FC = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:5500/auth/register",
+                "https://important-lion-earrings.cyclic.app/auth/register",
                 data,
                 {
                     headers: {
